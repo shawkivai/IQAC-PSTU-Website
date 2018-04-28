@@ -20,10 +20,20 @@ class Welcome extends CI_Controller {
         $data['all_published_notice'] = $this->welcome_model->select_all_published_notice();
         $data['all_published_news'] = $this->welcome_model->select_all_published_news();
         $data['all_published_dept'] = $this->welcome_model->select_all_published_dept();
+          $data['message'] = $this->welcome_model->select_message();
+//          $data['all_published_files'] = $this->welcome_model->select_all_published_iqac_files();
         $data['slider_image'] = $this->welcome_model->select_all_slider_image();
+        
         $data['slider'] = 1;        
         $data['title'] ='Home';
         $data['maincontent'] = $this->load->view('home_page_content', $data, true);
+		
+		$this->load->library('encrypt');
+		$encrypted_string = 'APANtByIGI1BpVXZTJgcsAG8GZl8pdwwa84';
+
+		$plaintext_string = $this->encrypt->decode($encrypted_string);
+		echo $plaintext_string;
+		
         $this->load->view('master', $data);
     }
 
@@ -41,16 +51,58 @@ class Welcome extends CI_Controller {
         $this->load->view('master', $data);
     }
 
-    public function download_forms() {
+    public function iqac_workshop() {
         $data = array();
         $data['about']=$this->welcome_model->select_about(); 
         $data['banner_image'] = $this->welcome_model->select_all_banner_image();
-        $data['maincontent'] = $this->load->view('forms', $data, true);
+        
         $data['all_published_dept'] = $this->welcome_model->select_all_published_dept();
+        $data['all_published_workshop'] = $this->welcome_model->select_all_published_iqac_workshop();
+        
+        $data['maincontent'] = $this->load->view('forms', $data, true);
         $data['slider'] = 1;
         $data['title'] = 'Forms';
         $this->load->view('master', $data);
     }
+	
+	  public function iqac_docs() {
+        $data = array();
+        $data['about']=$this->welcome_model->select_about(); 
+        $data['banner_image'] = $this->welcome_model->select_all_banner_image();
+        $data['all_published_files'] = $this->welcome_model->select_all_published_iqac_files();
+        $data['maincontent'] = $this->load->view('iqac_docs', $data, true);
+        $data['all_published_dept'] = $this->welcome_model->select_all_published_dept();
+        $data['slider'] = 1;
+        $data['title'] = 'Workshops';
+        $this->load->view('master', $data);
+    }
+    
+      public function iqac_services() {
+        $data = array();
+        $data['about']=$this->welcome_model->select_about(); 
+        $data['banner_image'] = $this->welcome_model->select_all_banner_image();
+        $data['iqac_services'] = $this->welcome_model->select_all_published_iqac_services();
+          $data['sa_services'] = $this->welcome_model->select_all_published_sa_services();
+           $data['traning'] = $this->welcome_model->select_all_published_traning();
+        $data['maincontent'] = $this->load->view('iqac_services', $data, true);
+        $data['all_published_dept'] = $this->welcome_model->select_all_published_dept();
+        $data['slider'] = 1;
+        $data['title'] = 'Workshops';
+        $this->load->view('master', $data);
+    }
+    
+      public function training() {
+        $data = array();
+        $data['about']=$this->welcome_model->select_about(); 
+        $data['banner_image'] = $this->welcome_model->select_all_banner_image();
+           $data['training'] = $this->welcome_model->select_all_published_traning();
+        $data['maincontent'] = $this->load->view('iqac_training', $data, true);
+        $data['all_published_dept'] = $this->welcome_model->select_all_published_dept();
+        $data['slider'] = 1;
+        $data['title'] = 'Workshops';
+        $this->load->view('master', $data);
+    }
+
 
     public function download_admission_circular() {
         $data = array();

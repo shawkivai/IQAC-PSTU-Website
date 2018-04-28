@@ -35,7 +35,7 @@
               
                  <th>Contact No.</th>
                
-                <th>Department</th>
+                
                 
                 <th>Actions</th>
             </tr>
@@ -57,8 +57,7 @@
                 
                 
              
-                <td class="center"><?php echo $v_staff->department_id?></td>
-                    
+               
              
                     
                     

@@ -1165,7 +1165,27 @@ class Super_Admin extends CI_Controller{
 
 //        $data['all_published_semester'] = $this->welcome_model->select_all_published_semester();
 
-        $data['admin_main_content'] = $this->load->view('admin/course/add_iqac_form', $data, true);
+        $data['admin_main_content'] = $this->load->view('admin/iqac/add_iqac_form', $data, true);
+        $this->load->view('admin/admin_master', $data);
+    }
+    
+          public function add_message() {
+        $data = array();
+        $data['admin_main_content'] = $this->load->view('admin/iqac/add_message', $data, true);
+        $this->load->view('admin/admin_master', $data);
+    }
+    
+    
+    
+    
+    
+          public function add_iqac_services() {
+        $data = array();
+
+
+//        $data['all_published_semester'] = $this->welcome_model->select_all_published_semester();
+
+        $data['admin_main_content'] = $this->load->view('admin/iqac/add_iqacservice_form', $data, true);
         $this->load->view('admin/admin_master', $data);
     }
     
@@ -1176,10 +1196,14 @@ class Super_Admin extends CI_Controller{
 
 //        $data['all_published_semester'] = $this->welcome_model->select_all_published_semester();
 
-        $data['admin_main_content'] = $this->load->view('admin/course/add_sac_form', $data, true);
+        $data['admin_main_content'] = $this->load->view('admin/iqac/add_sac_form', $data, true);
         $this->load->view('admin/admin_master', $data);
     }
     
+ 
+    
+    
+        
     public function save_iqac_info(){
         
         
@@ -1206,6 +1230,23 @@ class Super_Admin extends CI_Controller{
         $this->session->set_userdata($sdata);
 
         redirect('super_admin/add_course');
+        
+    }
+    
+      public function save_message(){
+        
+        
+        $data=array();
+        
+        
+        $data['message_body']=  $this->input->post('message_body',true);
+        
+        $this->sa_model->save_message($data);
+        $sdata = array();
+        $sdata['message'] = 'Save Director Message Information Successfully !';
+        $this->session->set_userdata($sdata);
+
+        redirect('super_admin/add_message');
         
     }
     
@@ -1243,81 +1284,102 @@ class Super_Admin extends CI_Controller{
     }
     
     
-    public function manage_course(){
+    public function manage_iqac(){
         
          $data = array();
 
-        $data['all_course'] = $this->sa_model->select_all_course();
-        $data['admin_main_content'] = $this->load->view('admin/course/manage_course',$data, true);
+        $data['all_course'] = $this->sa_model->select_iqac_comitee();
+        $data['admin_main_content'] = $this->load->view('admin/iqac/manage_iqac_comitee',$data, true);
         $this->load->view('admin/admin_master', $data);
         
     }
     
-    public function published_course($course_id) {
-
-        $this->sa_model->update_publication_course($course_id);
-        redirect('super_admin/manage_course');
-    }
-    
-    
-    public function unpublished_course($course_id){
-         $this->sa_model->update_unpublication_course($course_id);
-        redirect('super_admin/manage_course');
-    }
-    
-    public function delete_course($course_id){
+       public function manage_sa(){
         
-         $this->sa_model->delete_course_data($course_id);
-        redirect('super_admin/manage_course');
+         $data = array();
+
+        $data['all_sa'] = $this->sa_model->select_sa_comitee();
+        $data['admin_main_content'] = $this->load->view('admin/iqac/manage_sa_comitee',$data, true);
+        $this->load->view('admin/admin_master', $data);
+        
     }
     
-    public function edit_course($course_id){
+    public function published_iqac($serial_id) {
+
+        $this->sa_model->update_publication_course($serial_id);
+        redirect('super_admin/manage_iqac');
+    }
+    
+     public function published_sa($serial_id) {
+
+        $this->sa_model->update_publication_sa($serial_id);
+        redirect('super_admin/manage_sa');
+    }
+    
+    
+    public function unpublished_iqac($serial_id){
+         $this->sa_model->update_unpublication_course($serial_id);
+        redirect('super_admin/manage_iqac');
+    }
+    
+     public function unpublished_sa($serial_id){
+         $this->sa_model->update_unpublication_sa($serial_id);
+        redirect('super_admin/manage_sa');
+    }
+    
+    
+    public function delete_iqac($serial_id){
+        
+         $this->sa_model->delete_course_data($serial_id);
+        redirect('super_admin/manage_iqac');
+    }
+    
+       public function delete_sa($serial_id){
+        
+         $this->sa_model->delete_course_data($serial_id);
+        redirect('super_admin/manage_sa');
+    }
+    
+    public function edit_iqac_comitee($serial_id){
         
         $data=array();
      
        $data['all_published_semester'] = $this->sa_model->select_all_published_semester();
-        $data['course_info']=$this->sa_model->select_course_by_id($course_id);
-        $data['admin_main_content'] = $this->load->view('admin/course/edit_course',$data, true);
+        $data['iqac_info']=$this->sa_model->select_iqac_comitee_by_id($serial_id);
+        $data['admin_main_content'] = $this->load->view('admin/iqac/edit_iqac_comitee',$data, true);
         $this->load->view('admin/admin_master', $data);
         
     }
-    public function update_course(){
+    
+       public function edit_sa_comitee($serial_id){
         
         $data=array();
-        $course_id= $this->input->post('course_id');
-        $data['course_title']=$this->input->post('course_title');
-        $data['credit_hour']=$this->input->post('credit_hour');
-        $data['semester_id']=$this->input->post('semester_id');
+     
+       $data['all_published_semester'] = $this->sa_model->select_all_published_semester();
+        $data['sa_info']=$this->sa_model->select_sa_comitee_by_id($serial_id);
+        $data['admin_main_content'] = $this->load->view('admin/iqac/edit_sa_comitee',$data, true);
+        $this->load->view('admin/admin_master', $data);
         
-        $data['publication_status']=$this->input->post('publication_status');
+    }
+    public function update_iqac(){
         
-         /*
-         * ------- Start PDF Upload---------
-         */
-       $config['upload_path'] = 'uploads/course_files/';
-        $config['allowed_types'] = 'gif|jpg|png|pdf|doc|docx|ppt|pptx';
-        $config['max_size']	= '10000';
+        $data=array();
+        $serial_id= $this->input->post('serial_id');
+        $data['name']=$this->input->post('name');
+        $data['designation']=$this->input->post('designation');        
+        $this->sa_model->update_iqac($data,$serial_id);
+        redirect('super_admin/manage_iqac');
+    }
+    
+       public function update_sa(){
         
-
-        $this->load->library('upload', $config);
-        $this->upload->initialize($config);
-        $error='';
-        $fdata=array();
-        if ( ! $this->upload->do_upload('selected_course_file'))
-        {
-                $error =  $this->upload->display_errors();
-                echo $error;
-                exit();
-        }
-        else
-        {
-                $fdata = $this->upload->data();
-                $data['course_file_location']=$config['upload_path'] .$fdata['file_name'];
-        }
-        
-        
-        $this->sa_model->update_course($data,$course_id);
-        redirect('super_admin/manage_course');
+        $data=array();
+        $serial_id= $this->input->post('serial_id');
+        $data['faculty']=$this->input->post('faculty');
+        $data['name_department']=$this->input->post('name_department');
+        $data['designation']=$this->input->post('designation');        
+        $this->sa_model->update_sa($data,$serial_id);
+        redirect('super_admin/manage_sa');
     }
     //-------------------------------news and event----------------------------
      public function add_files()
@@ -1803,28 +1865,40 @@ public function change_password()
         $data['admin_main_content']=$this->load->view('admin/add_download_file',$data,true);
         $this->load->view('admin/admin_master',$data);
     }
-     public function save_download_file()
-    {    
+    
+    
+           public function add_workshop_file()
+    {
         $data=array();
-        $data['file_name']=$this->input->post('file_name',true);
-        $data['file_category']=$this->input->post('file_category',true);
-       
+        
+        
+        $data['admin_main_content']=$this->load->view('admin/add_workshop_file',$data,true);
+        $this->load->view('admin/admin_master',$data);
+    }
+    
+      public function save_workshop_file()
+    {    
+          $data=array();
+          
+           $data['file_name']=$this->input->post('file_name',true);
+          $file_id=$this->input->post('file_id');   
+     
+      
         /*
          * ------- Start Image Upload---------
          */
         $config['upload_path'] = 'files/';
-        $config['allowed_types'] = 'gif|jpg|png|pdf|doc|txt';
-        $config['max_size']	= '3000';
-        $config['max_width']  = '2024';
-        $config['max_height']  = '1968';
+        $config['allowed_types'] = 'gif|jpg|pdf|doc|docx|zip|png';
+        $config['max_size']	= '100000';
+        $config['max_width']  = '2024000';
+        $config['max_height']  = '1968000';
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
         $error='';
         $fdata=array();
-        if ( ! $this->upload->do_upload('file_location'))
-        {
-                $error =  $this->upload->display_errors();
+        if ( ! $this->upload->do_upload('seleced_file'))
+        {  $error =  $this->upload->display_errors();
                 echo $error;
                 exit();
         }
@@ -1834,10 +1908,49 @@ public function change_password()
                 $data['file_location']=$config['upload_path'] .$fdata['file_name'];
         }
         
-        /*
-         * --------End Image Upload---------
-         */
+         
+         
+        $this->sa_model->save_workshop_file_info($data);
+        $sdata=array();
+        $sdata['message']=' File saved Successfully !';
+        $this->session->set_userdata($sdata);
+        redirect('super_admin/add_workshop_file');
+    }
     
+     public function save_download_file()
+    {    
+          $data=array();
+          
+           $data['file_name']=$this->input->post('file_name',true);
+      $file_id=$this->input->post('file_id');   
+		
+      
+        /*
+         * ------- Start Image Upload---------
+         */
+        $config['upload_path'] = 'files/';
+        $config['allowed_types'] = 'gif|jpg|pdf|doc|docx|zip';
+        $config['max_size']	= '100000';
+        $config['max_width']  = '2024000';
+        $config['max_height']  = '1968000';
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        $error='';
+        $fdata=array();
+        if ( ! $this->upload->do_upload('seleced_file'))
+        {  $error =  $this->upload->display_errors();
+                echo $error;
+                exit();
+        }
+        else
+        {
+                $fdata = $this->upload->data();
+                $data['file_location']=$config['upload_path'] .$fdata['file_name'];
+        }
+        
+         
+         
         $this->sa_model->save_download_file_info($data);
         $sdata=array();
         $sdata['message']=' File saved Successfully !';

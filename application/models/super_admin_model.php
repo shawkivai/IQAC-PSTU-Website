@@ -475,19 +475,38 @@ class Super_Admin_Model extends CI_Model {
         return $result;
     }
     //---------------------------course-----------
-     public function select_all_course() {
+     public function select_iqac_comitee() {
         $this->db->select('*');
-        $this->db->from('tbl_course');
+        $this->db->from('tbl_iqac_comitee');
+        $query_result = $this->db->get();
+        $result = $query_result->result();
+
+        return $result;
+    }
+    
+      public function select_sa_comitee() {
+        $this->db->select('*');
+        $this->db->from('tbl_sac_comitee');
         $query_result = $this->db->get();
         $result = $query_result->result();
 
         return $result;
     }
 
-     public function select_course_by_id($course_id){
+     public function select_iqac_comitee_by_id($serial_id){
           $this->db->select('*');
-        $this->db->from('tbl_course');
-        $this->db->where('course_id',$course_id);
+        $this->db->from('tbl_iqac_comitee');
+        $this->db->where('serial_id',$serial_id);
+        $query_result=$this->db->get();
+        $result=$query_result->row();
+       
+        return $result;
+    }
+    
+        public function select_sa_comitee_by_id($serial_id){
+          $this->db->select('*');
+        $this->db->from('tbl_sac_comitee');
+        $this->db->where('serial_id',$serial_id);
         $query_result=$this->db->get();
         $result=$query_result->row();
        
@@ -498,6 +517,16 @@ class Super_Admin_Model extends CI_Model {
          $this->db->insert('tbl_iqac_comitee',$data);
      }
      
+      public function save_message($data)
+     {
+         $this->db->insert('tbl_messages',$data);
+     }
+     
+       public function save_iqac_services($data)
+     {
+         $this->db->insert('tbl_iqac_services',$data);
+     }
+     
       public function save_sac_info($data)
      {
          $this->db->insert('tbl_sac_comitee',$data);
@@ -505,27 +534,60 @@ class Super_Admin_Model extends CI_Model {
    
      
     
-    public function update_publication_course($course_id){
+    public function update_publication_course($serial_id){
         $this->db->set('publication_status',1);
-        $this->db->where('course_id',$course_id);
-        $this->db->update('tbl_course');
+        $this->db->where('serial_id',$serial_id);
+        $this->db->update('tbl_iqac_comitee');
+        
+    }
+    
+      public function update_publication_sa($serial_id){
+        $this->db->set('publication_status',1);
+        $this->db->where('serial_id',$serial_id);
+        $this->db->update('tbl_sac_comitee');
         
     }
     
     
-    public function update_unpublication_course($course_id){
+    public function update_unpublication_course($serial_id){
         $this->db->set('publication_status',0);
-        $this->db->where('course_id',$course_id);
-        $this->db->update('tbl_course');
+        $this->db->where('serial_id',$serial_id);
+        $this->db->update('tbl_iqac_comitee');
     }
     
-    public function delete_course_data($course_id){
+     public function update_unpublication_sa($serial_id){
+        $this->db->set('publication_status',0);
+        $this->db->where('serial_id',$serial_id);
+        $this->db->update('tbl_sac_comitee');
+    }
+    
+    public function delete_course_data($serial_id){
         
-        $this->db->where('course_id',$course_id);
-        $this->db->delete('tbl_course');
+        $this->db->where('serial_id',$serial_id);
+        $this->db->delete('tbl_iqac_comitee');
         
         
     }
+    
+      public function delete_sa($serial_id){
+        
+        $this->db->where('serial_id',$serial_id);
+        $this->db->delete('tbl_sac_comitee');
+        
+        
+    }
+    
+     public function update_iqac($data, $serial_id) {
+        $this->db->where('serial_id', $serial_id);
+        $this->db->update('tbl_iqac_comitee', $data);
+    }
+    
+    
+     public function update_sa($data, $serial_id) {
+        $this->db->where('serial_id', $serial_id);
+        $this->db->update('tbl_sac_comitee', $data);
+    }
+    
     
     public function update_blogstate($data,$blog_id){
         
@@ -807,6 +869,12 @@ class Super_Admin_Model extends CI_Model {
      public function save_download_file_info($data)
     {
          $this->db->insert('tbl_file', $data);
+    }
+    
+    
+      public function save_workshop_file_info($data)
+    {
+         $this->db->insert('tbl_workshop', $data);
     }
     public function select_all_download_file(){
         

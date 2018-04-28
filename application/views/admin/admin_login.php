@@ -79,10 +79,17 @@
                                                 ?>
                                             </h3>
 					</div>
-                                    <form class="form-horizontal" action="<?php echo base_url();?>admin/check_admin_login" method="post">
+                                   
+
+
+								   <form class="form-horizontal" action="<?php echo base_url();?>admin/check_admin_login" method="post">
+								  
+						
+						
+						
 						<fieldset>
 							<div class="input-prepend" title="Email" data-rel="tooltip">
-								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="admin_email_address" placeholder="Email Address" id="username" type="text"  />
+								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="admin_email_address" placeholder="Email Address" id="username" type="email"  />
 							</div>
 							<div class="clearfix"></div>
 

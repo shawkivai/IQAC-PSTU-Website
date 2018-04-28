@@ -30,8 +30,9 @@
             <tr>
                 
                 <th>File ID</th>
-                <th>File Name</th>
-                <th>File Category</th>
+                <th>File Location</th>
+				<th>File Name </th>
+             
               
                 
                
@@ -47,10 +48,10 @@
             ?>
             <tr>
                 <td><?php echo $v_file->file_id?></td>
-                <td class="center"><?php echo $v_file->file_name?></td>
+                <td class="center"><?php echo $v_file->file_location?></td>
+				<td class="center"><?php echo $v_file->file_name?></td>
                 
-                <td class="center"><?php echo $v_file->file_category?></td>
-                
+          
                
                     
                    <td class="center"> <a class="btn btn-info" href="<?php echo base_url();?>super_admin/edit_download_file/<?php echo $v_file->file_id?>" title="Edit">

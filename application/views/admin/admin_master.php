@@ -127,11 +127,47 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li class="nav-header hidden-tablet">Main</li>
                                                 <li><a class="ajax-link" href="<?php echo base_url();?>super_admin"><i class="icon-home"></i><span class="hidden-tablet"> Dashbord</span></a></li>
-                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/see_sender_message"><i class="icon-edit"></i><span class="hidden-tablet"> View Messages</span></a></li>
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_message"><i class="icon-edit"></i><span class="hidden-tablet"> Directors Messages</span></a></li>
 						
                                                 <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/change_password"><i class="icon-eye-open"></i><span class="hidden-tablet"> Change Password</span></a></li>
                                                 <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_banner"><i class="icon-eye-open"></i><span class="hidden-tablet"> Update Banner</span></a></li>
                                                 <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_slider"><i class="icon-eye-open"></i><span class="hidden-tablet"> Update Slider Image </span></a></li>
+                                                
+                                                     <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_dean_office_staff"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add Directors</span></a></li>
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_dean_office_staff"><i class="icon-edit"></i><span class="hidden-tablet"> Manage Directors</span></a></li>
+                                                
+                                                
+                                                
+                                                  <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_iqac_member"><i class="icon-edit"></i><span class="hidden-tablet"> IQAC Commmittee</span></a></li>
+                                                
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_sac_member"><i class="icon-edit"></i><span class="hidden-tablet"> SA Committee</span></a></li>
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_iqac"><i class="icon-edit"></i><span class="hidden-tablet"> Manage IQAC-Committee</span></a></li>
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_sa"><i class="icon-edit"></i><span class="hidden-tablet"> Manage SA-Committee</span></a></li>
+                                                
+                                                
+                                                
+                                                     <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_iqac_services"><i class="icon-edit"></i><span class="hidden-tablet">Add IQAC-Services</span></a></li>
+<!--                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_iqac"><i class="icon-edit"></i><span class="hidden-tablet">Add SA-Services</span></a></li>
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_sa"><i class="icon-edit"></i><span class="hidden-tablet"> Worshop-Training</span></a></li>
+                                                -->
+                                                
+                                                
+                                                
+                                                 <!--<li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_blog"><i class="icon-edit"></i><span class="hidden-tablet">Add Blog</span></a></li>-->
+                                                 <!--<li><a class="ajax-link" href="<?php echo base_url();?>super_admin/view_blog"><i class="icon-edit"></i><span class="hidden-tablet">View Blog</span></a></li>-->
+<!--                                                
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_teacher_files"><i class="icon-edit"></i><span class="hidden-tablet"> Manage Course Materials</span></a></li>-->
+                                                      <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_download_file"><i class="icon-eye-open"></i><span class="hidden-tablet"> Upload IQAC-Files</span></a></li>
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_download_file"><i class="icon-edit"></i><span class="hidden-tablet"> Manage IQAC-Files</span></a></li>
+                                                 <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_workshop_file"><i class="icon-eye-open"></i><span class="hidden-tablet">Upload Workshop Files</span></a></li>
+                                                
+                                                                          <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_staff"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add office staff</span></a></li>
+                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_staff"><i class="icon-edit"></i><span class="hidden-tablet"> Manage staff</span></a></li>
+                                                
+                                                                     
+                                                
+                                                
+                                                
                                                 <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_tab"><i class="icon-eye-open"></i><span class="hidden-tablet"> Update Tab Menu </span></a></li>
 <!--                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_department"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add Department</span></a></li>
                                                 <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_department"><i class="icon-edit"></i><span class="hidden-tablet"> Manage Department</span></a></li>
@@ -154,23 +190,7 @@
                                                 
                                                 
                                                 
-                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_iqac_member"><i class="icon-edit"></i><span class="hidden-tablet"> IQAC Comitee</span></a></li>
-                                                
-                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_sac_member"><i class="icon-edit"></i><span class="hidden-tablet"> SAC Comitee</span></a></li>
-                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_course"><i class="icon-edit"></i><span class="hidden-tablet"> Manage IQAC-Comitee</span></a></li>
-                                                 <!--<li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_blog"><i class="icon-edit"></i><span class="hidden-tablet">Add Blog</span></a></li>-->
-                                                 <!--<li><a class="ajax-link" href="<?php echo base_url();?>super_admin/view_blog"><i class="icon-edit"></i><span class="hidden-tablet">View Blog</span></a></li>-->
-<!--                                                
-                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_teacher_files"><i class="icon-edit"></i><span class="hidden-tablet"> Manage Course Materials</span></a></li>-->
-                                                      <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_download_file"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add Form</span></a></li>
-                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_download_file"><i class="icon-edit"></i><span class="hidden-tablet"> Manage Form</span></a></li>
-                                                
-                                                                          <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_staff"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add office staff</span></a></li>
-                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_staff"><i class="icon-edit"></i><span class="hidden-tablet"> Manage staff</span></a></li>
-                                                
-                                                                          <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_dean_office_staff"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add Directors</span></a></li>
-                                                <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_dean_office_staff"><i class="icon-edit"></i><span class="hidden-tablet"> Manage Directors</span></a></li>
-                                                
+                                              
                                                 
 <!--                                                       <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/add_emba_office_staff"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add EMBA Office Staff</span></a></li>
                                                 <li><a class="ajax-link" href="<?php echo base_url();?>super_admin/manage_emba_office_staff"><i class="icon-edit"></i><span class="hidden-tablet"> Manage EMBA Office Staff</span></a></li>

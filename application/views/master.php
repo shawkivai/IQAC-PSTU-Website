@@ -243,10 +243,12 @@
                                     <!--sub menu-->
                                     <div class = "sub_menu_wrap top_arrow d_xs_none type_2 tr_all_hover clearfix r_corners">
                                         <ul class = "sub_menu" style="text-decoration: none;">
-                                            <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/iqac">QAC Comitee</a></li>
-											
-											 <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/sac">SAC Comitee</a></li>
+                                            
                                             <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/director">Director</a></li>
+                                            <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/iqac">QAC Committee</a></li>
+											
+											 <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/sac">SA Committee</a></li>
+                                            
                                             <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/staff">Other Staff</a></li>
                                             
                                            
@@ -262,8 +264,8 @@
                                     <!--sub menu-->
                                     <div class = "sub_menu_wrap top_arrow d_xs_none type_2 tr_all_hover clearfix r_corners">
                                         <ul class = "sub_menu" style="text-decoration: none;">
-                                             <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome">IQAC Activities</a></li>
-                                            <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome">Workshop/Seminar</a></li>
+                                             <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/iqac_services">IQAC Activities</a></li>
+                                            <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/training">Workshop/Seminar</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -301,7 +303,9 @@
                                     <div class = "sub_menu_wrap top_arrow d_xs_none type_2 tr_all_hover clearfix r_corners">
                                         <ul class = "sub_menu">
                                             <!--<li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/download_admission_circular">Admission Circular</a></li>-->
-                                            <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/download_forms">Forms</a></li>
+                                            <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/iqac_workshop">Workshop Letters</a></li>
+											
+											   <li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/iqac_docs">IQAC-Docs</a></li>
                                             <!--<li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/download_course_content">Course Materials</a></li>-->
 <!--                                            <li><a class = "color_dark tr_delay_hover" href = "<?php echo base_url(); ?>welcome/students_file">Students Uploads</a></li>-->
                                             <!--<li><a class = "color_dark tr_delay_hover" style="text-decoration: none;" href = "<?php echo base_url(); ?>welcome/download_question_archive">Question Archive</a></li>-->
@@ -326,6 +330,7 @@
 
 <div class = "boxed_layout relative w_xs_auto"  style="background-image:url(<?php echo base_url() ?>images/bg2.jpg);background-size: cover">
     <div class = "mainbar" >
+	
 
         <?php echo $maincontent;
         ?>
@@ -341,6 +346,7 @@
     <footer id="footer">
         <div class="footer_top_part">
             <div class="container">
+			
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_45">
                         <iframe src="https://www.google.com/maps/embed/v1/place?q=patuakhali%20science%20and%20technology%20university&key=AIzaSyCFjXapkbo1qb8nORukJl3K0Kb4c5rVLoc " width="400" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -381,7 +387,7 @@
             <div class="container clearfix t_mxs_align_c">
                 <p class="f_left f_mxs_none m_mxs_bottom_10">&copy; 2017 <span class="color_light">PSTU CSE</span>. All Rights Reserved. <span class="color_light"> <a href="<?php echo base_url(); ?>developers"><b>  Developers </b> </a></span>.</p>
                 <ul class="f_right horizontal_list clearfix f_mxs_none d_mxs_inline_b">
-
+					
                 </ul>
             </div>
         </div>

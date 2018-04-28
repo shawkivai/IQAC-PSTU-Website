@@ -3,29 +3,35 @@
     <h3> Download Workshop Letters </h3>
     <hr>
     <h4> Workshop Letters </h4>
-    <hr>
-    <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/iqac1.jpg" > Letter 1 </a> <br>
-    <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q2.jpg" > Letter 2 </a> <br>
-     <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q3.jpg" >Letter 3 </a> <br>
-    <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q4.jpg" > Letter 4 </a> <br>
-     <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q5.jpg" > Letter 5 </a> <br>
-    <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q6.jpg" > Letter 6  </a> <br>
-     <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q7.jpg" > Letter 7 </a> <br>
-     
-     <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q8.jpg" > Letter 8 </a> <br>
-     
-     
-      <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q9.jpg" > Letter 9  </a> <br>
-      
-       <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q10.jpg" > Letter 10  </a> <br>
-       
-       
-      <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q11.jpg" > Letter 11 </a> <br>
-      
-       <a href="<?php echo base_url();?>uploads\WORKSHOP LETTER IMAGES/q12.jpg" > Letter 12  </a> <br>
     
-    <hr>
-     <!--<a href="<?php echo base_url();?>uploads/Addmission_Circular_2016-17b.pdf" >Admission Circular 2016-17 PDF </a> <br>-->
-   
+     <table class="table table-striped table-bordered bootstrap-datatable datatable" margin-left="10px" border="0" width='100%' bgcolor='#ff00ff'margin-top="10px" >
+        <thead>
+            <tr>
+             
+                <th><u>Serial No.</u></th>
+                <th><u>File Name</u></th>
+                <!--<th><u>Designation</u></th>-->
+                <!--<th><u>Course Details </u></th>-->
+                
+               
+            </tr>
+        </thead>   
+        <tbody>
+             <?php
+                foreach($all_published_workshop as $v_workshop)
+                {
+            ?>
+            <tr>
+              
+                <td class="center"><?php echo $v_workshop->file_id?></td>
+                <td class="center"> <b><?php echo $v_workshop->file_name?></b></td>
+                <!--<td class="center"><b><?php echo $v_course->designation?></b></td>-->
+                <td class="center"> <p class="spec"><a href="<?php echo base_url().$v_workshop->file_location?>" class="rm">Download</a></p></td>
+               
+              
+            </tr>
+                <?php } ?>
+        </tbody>
+    </table>            
 </div>
 </div>

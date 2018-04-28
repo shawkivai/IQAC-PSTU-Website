@@ -79,6 +79,26 @@ class Welcome_Model extends CI_Model {
         $result = $query_result->result();
         return $result;
     }
+    
+      public function select_all_published_iqac_files() {
+        $this->db->select('*');
+        $this->db->from('tbl_file');
+//        $this->db->where('publication_status', 1);
+        $query_result = $this->db->get();
+        $result = $query_result->result();
+        return $result;
+    }
+    
+        
+      public function select_all_published_iqac_workshop() {
+        $this->db->select('*');
+        $this->db->from('tbl_workshop');
+//        $this->db->where('publication_status', 1);
+        $query_result = $this->db->get();
+        $result = $query_result->result();
+        return $result;
+    }
+	
 	
 	
 	 public function select_all_published_sac_comitee() {
@@ -144,6 +164,38 @@ class Welcome_Model extends CI_Model {
         $result = $query_result->result();
         return $result;
     }
+    
+     public function select_all_published_iqac_services() {
+        $this->db->select('*');
+        $this->db->from('tbl_iqac_services');
+        $query_result = $this->db->get();
+        $result = $query_result->result();
+        return $result;
+    }
+    
+      public function select_all_published_sa_services() {
+        $this->db->select('*');
+        $this->db->from('tbl_sa_services');
+        $query_result = $this->db->get();
+        $result = $query_result->result();
+        return $result;
+    }
+    
+       public function select_all_published_traning() {
+        $this->db->select('*');
+        $this->db->from('tbl_traning');
+        $query_result = $this->db->get();
+        $result = $query_result->result();
+        return $result;
+    }
+       public function select_message() {
+        $this->db->select('*');
+        $this->db->from('tbl_messages');
+        $query_result = $this->db->get();
+        $result = $query_result->result();
+        return $result;
+    }
+    
 
     public function select_all_published_news() {
         $this->db->select('*');

@@ -12,6 +12,10 @@
     <?php } ?>
 
 </div>
+
+
+
+
  <br>
  <div class="col-sm-12" style="background-color:wheat;">
      <h2 class="wpb_heading wpb_singleimage_heading" align="center" font-style: italic font-size="24" color="blue"><b>Welcome to IQAC-PSTU Creator of the Excellence</b></h2>
@@ -106,13 +110,22 @@
 
                             </div>
                             <div class="aside">
-							<img src="<?php echo base_url(); ?>images/Sahidulsir.jpg" width="30%" height="100">
+							<img src="<?php echo base_url(); ?>images/sahidulsir.jpg" width="30%" height="100">
 							
+                                                        
+                     <?php
+                foreach($message as $m)
+                {
+            ?>
                                 <p class="color_light tr_delay_hover" align="justify" margin-left="5">
-                                         IQAC-PSTU is established in Patuakhali Science & Technology University university under an administrative order of the university authority. It shall be organized in such a way as befits the size, existing structure and capacity of the university as delineated in the Act. For the initial period the IQAC shall be established with the financial assistance from HEQEP. However, the IQAC shall become a permanent organ of the universities and their operations will be sustained and maintained under the revenue budget of the institution. For this purpose universities will prepare a succession plan during the project period with the objectives of its continuity. For the purpose of a dynamic and effective IQAC the concerned university must take initiative to increase the availability of experienced and competent academics.  
+                                         
+                                    <?php echo $m->message_body;?>
+                                    <!--IQAC-PSTU is established in Patuakhali Science & Technology University university under an administrative order of the university authority. It shall be organized in such a way as befits the size, existing structure and capacity of the university as delineated in the Act. For the initial period the IQAC shall be established with the financial assistance from HEQEP. However, the IQAC shall become a permanent organ of the universities and their operations will be sustained and maintained under the revenue budget of the institution. For this purpose universities will prepare a succession plan during the project period with the objectives of its continuity. For the purpose of a dynamic and effective IQAC the concerned university must take initiative to increase the availability of experienced and competent academics.-->  
                             
                                 
                                 </p>
+                                
+                <?php }?>
                             </div>
                         </div>
 
